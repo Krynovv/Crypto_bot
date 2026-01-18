@@ -2,10 +2,9 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 import requests
+from config.config import config
 
-BOT_TOKEN = '8559614502:AAHSno3KCYkqKA00fUv_gPsOMdyQB-3gGBM'
-
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=config.bot.token)
 dp = Dispatcher()
 
 #Комманда /start
@@ -32,7 +31,6 @@ async def send_echo(message: Message):
 
 dp.message.register(process_help_command, Command(commands='help'))
 dp.message.register(process_start_command, Command(commands='start'))
-
 print('Hello word')
 
 if __name__ == '__main__':
