@@ -6,14 +6,20 @@ class TgBot:
    token: str
 
 @dataclass
+class LogSettings:
+   level: str
+   format: str
+
+@dataclass
 class Config:
    bot: TgBot
+   log: LogSettings
 
-env: Env = Env()
-env.read_env()
+def load_config(path: str | None = None) -> Config:
+   env = Env()
+   env.read_env(path)
+   return Config(
+      bot=TgBot(token=env("BOT_TOKEN")),
+      log=LogSettings(level=env("LOG_LEVEL"), format=env("LOG_FORMAT")),
+   )
 
-config = Config(
-   bot = TgBot(token=env('BOT_TOKEN'))
-)
-
-print('BOT_TOKEN:', config.bot.token)

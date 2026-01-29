@@ -31,7 +31,6 @@ async def send_echo(message: Message):
 
 dp.message.register(process_help_command, Command(commands='help'))
 dp.message.register(process_start_command, Command(commands='start'))
-print('Hello word')
 
 if __name__ == '__main__':
    dp.run_polling(bot)
