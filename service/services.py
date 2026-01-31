@@ -1,11 +1,6 @@
-from aiogram import Bot, Dispatcher
-from aiogram.filters import Command
-from aiogram.types import Message
 import requests
-from config.config import config
+from lexicon.lexicon import LEXICON_RU
 
-bot = Bot(token=config.bot.token)
-dp = Dispatcher()
 
 coin = ["bitcoin", "ethereum"]
 
@@ -25,6 +20,3 @@ def get_price_change(coin_id=coin, days=1):
       "change_pct": change_pct,
       "period_hours": days * 24
    }
-
-if __name__ == '__main__':
-   dp.run_polling(bot)
