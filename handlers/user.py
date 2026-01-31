@@ -2,7 +2,7 @@ from aiogram import F, Router
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from lexicon.lexicon import LEXICON_RU
-from keyboards.keyboard import direct_kb, kb
+from keyboards.keyboard import direct_kb, kb, news_kb
 from service.services import get_price_change
 
 
@@ -20,5 +20,10 @@ async def process_direct_answer(message:Message):
 
 @user_router.message(F.text == LEXICON_RU["button_news"])
 async def process_news_answer(message:Message):
-    await message.answer(F.text == LEXICON_RU["news"])
-    news = get_price_change
+    await message.answer(text=LEXICON_RU["news"], reply_markup=news_kb)
+
+@user_router.message(F.text == LEXICON_RU["button_news_BTC"])
+async def process_news_BTC_answer(message:Message):
+    news_BTC = get_price_change("bitcoin", days=1)
+    await message.answer(news_BTC)
+
