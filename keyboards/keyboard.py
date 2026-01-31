@@ -2,6 +2,8 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from lexicon.lexicon import LEXICON_RU
 
+
+
 #==================================================================================
 #---------------------------|__Клавиатура-start__|---------------------------------
 
@@ -24,19 +26,31 @@ kb: ReplyKeyboardMarkup = kb_builder.as_markup(
 #===================================================================================
 #---------------------------|__Клавиатура-direction__|------------------------------
 
+
 # Кнопки-coins
 button_BTC = KeyboardButton(text=LEXICON_RU["button_BTC"])
 button_ETH = KeyboardButton(text=LEXICON_RU["button_ETH"])
+button_return1 = KeyboardButton(text=LEXICON_RU["button_return"])
 
 direct_kb = ReplyKeyboardMarkup(
-   keyboard=[[button_BTC], [button_ETH]], resize_keyboard=True
+   keyboard=[
+      [button_BTC, button_ETH],
+      [button_return1]
+   ], resize_keyboard=True
+
 )
 
 #===================================================================================
 #---------------------------|__Клавиатура-news__|------------------------------
 button_news_BTC = KeyboardButton(text=LEXICON_RU["button_news_BTC"])
 button_news_ETH = KeyboardButton(text=LEXICON_RU["button_news_ETH"])
+button_news_BNB = KeyboardButton(text=LEXICON_RU["button_news_BNB"])
+button_news_SOL = KeyboardButton(text=LEXICON_RU["button_news_SOL"])
+button_return2 = KeyboardButton(text=LEXICON_RU["button_return"])
 
 news_kb = ReplyKeyboardMarkup(
-   keyboard=[[button_news_BTC], [button_news_ETH]], resize_keyboard=True
+   keyboard=[
+      [button_news_BTC, button_news_ETH, button_news_BNB, button_news_SOL],
+      [button_return2]
+   ], resize_keyboard=True
 )
