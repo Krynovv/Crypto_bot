@@ -30,11 +30,13 @@ kb: ReplyKeyboardMarkup = kb_builder.as_markup(
 # Кнопки-coins
 button_BTC = KeyboardButton(text=LEXICON_RU["button_BTC"])
 button_ETH = KeyboardButton(text=LEXICON_RU["button_ETH"])
+button_BNB = KeyboardButton(text=LEXICON_RU["button_BNB"])
+button_SOL = KeyboardButton(text=LEXICON_RU["button_SOL"])
 button_return1 = KeyboardButton(text=LEXICON_RU["button_return"])
 
 direct_kb = ReplyKeyboardMarkup(
    keyboard=[
-      [button_BTC, button_ETH],
+      [button_BTC, button_ETH, button_BNB, button_SOL],
       [button_return1]
    ], resize_keyboard=True
 

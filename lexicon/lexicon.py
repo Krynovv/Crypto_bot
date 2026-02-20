@@ -3,7 +3,7 @@ LEXICON_RU = {
    "button_return": "Назад",
    "main_menu": "Меню",
 
-   "button_direction": "Прогнозы",
+   "button_direction": "Прогноз",
    "button_news": "Изменение цен",
    "news" : "Последние изменения цен монет за 24ч",
    "button_no": "нет",
